@@ -7,6 +7,7 @@
 # Hint: the first setting requires configuration file, the second one should be done in code.
 # Send ZIP or tar.gz file with package, program file, pycodestyle config file.
 # Do not include any venv stuff there.
+# test comment
 
 from math import sqrt
 
