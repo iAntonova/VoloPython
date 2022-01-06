@@ -8,7 +8,6 @@ import sys
 import argparse
 
 if __name__ == "__main__":
-
     try:
         parser = argparse.ArgumentParser(prog=sys.argv[0],
                                          description="Print environment variables")
