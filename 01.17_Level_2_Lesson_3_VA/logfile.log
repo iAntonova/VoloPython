@@ -1,0 +1,4 @@
+2022-01-20 09:40:12,559: - INFO:XML file is opened
+2022-01-20 09:40:12,560: - INFO:XML file is parsed to dictionary
+2022-01-20 09:40:12,562: - INFO:JSON validation is passed
+2022-01-20 09:40:12,563: - INFO:Data are saved in JSON file
