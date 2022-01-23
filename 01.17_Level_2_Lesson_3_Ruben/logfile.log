@@ -1,0 +1,4 @@
+2022-01-23 12:50:15,805: INFO:Loading XML file hdata1.xml
+2022-01-23 12:50:15,806: INFO:Reformatting XML content
+2022-01-23 12:50:15,806: INFO:Validating XML content
+2022-01-23 12:50:15,807: INFO:Writing output to out.json
