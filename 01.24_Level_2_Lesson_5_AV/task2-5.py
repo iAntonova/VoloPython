@@ -1,15 +1,18 @@
-# Load JSON content into memory. Use requests module to POST the json content to the endpoint
+# Load JSON content into memory.
+# Use requests module to POST the json content to the endpoint
 # https://jsonplaceholder.typicode.com/posts
 # The response will be the data sent by you + an additional id field.
 # Validate it against the proper schema created by you.
-# If validation is OK, print OK, if not – print details on the validation failure
-# Print duration of request (use request’s built-in features rather than time intervals)
+# If validation is OK, print OK, if not – print details on
+# the validation failure
+# Print duration of request (use request’s built-in
+# features rather than time intervals)
+# pycodestyle --first .\task2-5.py
 
 import sys
 import json
-from pprint import pprint
-
 import requests
+from pprint import pprint
 from marshmallow import Schema, fields, validate, ValidationError, EXCLUDE
 
 # The URL we are going to connect to
@@ -27,7 +30,8 @@ class UserSchema(Schema):
         unknown = EXCLUDE
 
     body = fields.String(required=True)
-    userId = fields.Integer(validate=validate.Range(min=1, max=99), required=True)
+    userId = fields.Integer(validate=validate.Range(min=1, max=99),
+                            required=True)
     title = fields.String(required=True)
 
 
@@ -56,5 +60,3 @@ try:
 except Exception as x:
     sys.stderr.write(str(x))
     sys.exit(2)
-
-
