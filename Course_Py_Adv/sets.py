@@ -5,7 +5,7 @@ print("18: * frozen set *")
 # it is also collection data type, it's immutable version of normal set
 a = frozenset([1, 2, 3, 4])
 
-print(a)    # frozenset({1, 2, 3, 4})
+print(a)  # frozenset({1, 2, 3, 4})
 
 # now u can't change it after it's creation
 
@@ -20,49 +20,48 @@ print("17: * copping two sets *")
 setP = {1, 2, 3, 4, 5, 6}
 
 setQ = setP
-print(setQ)     # {1, 2, 3, 4, 5, 6}
+print(setQ)  # {1, 2, 3, 4, 5, 6}
 
 # but now if we modify setQ, setP will be modified too:
 setQ.add(7)
-print(setQ)     # {1, 2, 3, 4, 5, 6, 7}
-print(setP)     # {1, 2, 3, 4, 5, 6, 7}
+print(setQ)  # {1, 2, 3, 4, 5, 6, 7}
+print(setP)  # {1, 2, 3, 4, 5, 6, 7}
 
 # so if u wana make an actual reference:
 setU = setP.copy()
 setU.add(8)
 # now setP will not be modified
-print(setU)     # {1, 2, 3, 4, 5, 6, 7, 8}
-print(setP)     # {1, 2, 3, 4, 5, 6, 7}
+print(setU)  # {1, 2, 3, 4, 5, 6, 7, 8}
+print(setP)  # {1, 2, 3, 4, 5, 6, 7}
 
 # or use set() method
 
 setV = set(setP)
 setV.add(9)
 
-print(setV)     # {1, 2, 3, 4, 5, 6, 7, 9}
-print(setP)     # {1, 2, 3, 4, 5, 6, 7}
-
+print(setV)  # {1, 2, 3, 4, 5, 6, 7, 9}
+print(setP)  # {1, 2, 3, 4, 5, 6, 7}
 
 print("16: * disjoint *")
 setM = {1, 2, 3, 4, 5, 6}
 setN = {1, 2, 3}
 setO = {7, 8}
 
-print(setM.isdisjoint(setN))      # False - because they have same elements
-print(setN.isdisjoint(setO))      # True
+print(setM.isdisjoint(setN))  # False - because they have same elements
+print(setN.isdisjoint(setO))  # True
 
 print("15: * superset & subset *")
 setK = {1, 2, 3, 4, 5, 6}
 setL = {1, 2, 3}
 
 # calculate if one set is subset of another
-print(setK.issubset(setL))      # False
-print(setL.issubset(setK))      # True
+print(setK.issubset(setL))  # False
+print(setL.issubset(setK))  # True
 
 # and the opposite:
 # calculate if one set is superset of another
-print(setK.issuperset(setL))     # True
-print(setL.issuperset(setK))     # False
+print(setK.issuperset(setL))  # True
+print(setL.issuperset(setK))  # False
 
 print("14: * symmetric difference update method *")
 # display elements NOT found in both sets
@@ -71,7 +70,7 @@ setJ = {1, 2, 3, 10, 11, 12}
 
 setI.symmetric_difference_update(setJ)
 
-print(setI)     # {4, 5, 6, 7, 8, 9, 10, 11, 12}
+print(setI)  # {4, 5, 6, 7, 8, 9, 10, 11, 12}
 
 print("13: * difference update method *")
 # removing elements found in other set
@@ -80,7 +79,7 @@ setH = {1, 2, 3, 10, 11, 12}
 
 setG.difference_update(setH)
 
-print(setG)     # {4, 5, 6, 7, 8, 9}
+print(setG)  # {4, 5, 6, 7, 8, 9}
 
 print("12: * intersection_update set method*")
 # display only elements found in both sets
@@ -89,7 +88,7 @@ setF = {1, 2, 3, 10, 11, 12}
 
 setE.intersection_update(setF)
 
-print(setE)     # {1, 2, 3}
+print(setE)  # {1, 2, 3}
 
 print("11: * update set without duplication *")
 # Both methods will not modify original sets
@@ -101,7 +100,7 @@ setD = {1, 2, 3, 10, 11, 12}
 
 setC.update(setD)
 
-print(setC)     # {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
+print(setC)  # {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
 
 print("10: * difference from two sets II method *")
 setA = {1, 2, 3, 4, 5, 6, 7, 8, 9}
@@ -109,11 +108,11 @@ setB = {1, 2, 3, 10, 11, 12}
 
 diff = setA.symmetric_difference(setB)
 
-print(diff)     # {4, 5, 6, 7, 8, 9, 10, 11, 12}
+print(diff)  # {4, 5, 6, 7, 8, 9, 10, 11, 12}
 
 diff1 = setB.symmetric_difference(setA)
 
-print(diff1)     # {10, 11, 12}
+print(diff1)  # {10, 11, 12}
 
 # Both methods will not modify original sets
 # they always return a new set.
@@ -125,11 +124,11 @@ setB = {1, 2, 3, 10, 11, 12}
 
 diff = setA.difference(setB)
 
-print(diff)     # {4, 5, 6, 7, 8, 9}
+print(diff)  # {4, 5, 6, 7, 8, 9}
 
 diff = setB.difference(setA)
 
-print(diff)     # {10, 11, 12}
+print(diff)  # {10, 11, 12}
 
 print("8: * union & intersection *")
 odds = {1, 3, 5, 7, 9}
@@ -137,12 +136,12 @@ evens = {0, 2, 4, 6, 8}
 primes = {2, 3, 5, 7}
 # now we can calculate unions - combines both from two sets w/o duplication
 u = odds.union(evens)
-print(u)    # {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+print(u)  # {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
 
 # also we can calculate intersection from two sets
 # so will be print only elements found from two sets:
 i = odds.intersection(primes)
-print(i)   # {3, 5, 7}
+print(i)  # {3, 5, 7}
 
 print("7: * we can check if our element inside set *")
 myset = set()
@@ -154,7 +153,6 @@ myset.add(3)
 if 1 in myset:
     print("yes")
 
-
 print("6: * we can iterate inside *")
 myset = set()
 
@@ -164,10 +162,9 @@ myset.add(3)
 
 for i in myset:
     print(i)
-                # 1
-                # 2
-                # 3
-
+    # 1
+    # 2
+    # 3
 
 print("5: * mutable *")
 # myset = set()
@@ -201,7 +198,7 @@ myset.add(2)
 myset.add(3)
 
 print(myset.pop())  # 1
-print(myset)        # {2, 3}
+print(myset)  # {2, 3}
 
 print("4: * do empty set *")
 myset = {}
@@ -211,17 +208,15 @@ myset = set()
 print(type(myset))  # <class 'set'>
 
 print("3: * unordered *")
-myset = set("Hello")    # {1, 2, 3}
-print(myset)    # {'l', 'e', 'o', 'H'} - unordered (order not important). able to coutn amount of unique
-print(type(myset))      # <class 'set'>
+myset = set("Hello")  # {1, 2, 3}
+print(myset)  # {'l', 'e', 'o', 'H'} - unordered (order not important). able to coutn amount of unique
+print(type(myset))  # <class 'set'>
 
 print("2: * * *")
-myset = set([1, 2, 3])    # {1, 2, 3}
+myset = set([1, 2, 3])  # {1, 2, 3}
 print(myset)
-
 
 print("1: * no duplicates *")
 myset = {1, 2, 2, 3}
 
-print(myset)    # {1, 2, 3}
-
+print(myset)  # {1, 2, 3}

@@ -3,8 +3,9 @@
 
 """ ------   """
 import timeit
-print(timeit.timeit(stmt="[0, 1, 2, 3, 4, 5]", number=1000000)) # 0.034816708
-print(timeit.timeit(stmt="(0, 1, 2, 3, 4, 5)", number=1000000)) # 0.0044052499999999994
+
+print(timeit.timeit(stmt="[0, 1, 2, 3, 4, 5]", number=1000000))  # 0.034816708
+print(timeit.timeit(stmt="(0, 1, 2, 3, 4, 5)", number=1000000))  # 0.0044052499999999994
 
 """ ------   """
 # # Compare tuple and a list:

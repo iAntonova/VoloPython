@@ -4,7 +4,7 @@
 """-----------"""
 # List comprehension: way to create new list from existing with one line
 mylyst = [1, 2, 3, 4, 5, 6]
-b = [i*i for i in mylyst]
+b = [i * i for i in mylyst]
 print(b)  # [1, 4, 9, 16, 25, 36]
 
 """-----------"""
