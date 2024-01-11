@@ -25,7 +25,14 @@ prod = product(a, b, repeat=2) # repeat=2 - repeat the product 2 times
 print(list(prod)) 
 # [(1, 3, 1, 3), (1, 3, 2, 3), (2, 3, 1, 3), (2, 3, 2, 3)] - list of tuples
 
-# permutations
+# permutations - order matters - no repeat
+a = [1, 2, 3]
+perm = permutations(a)
+print(perm) # <itertools.permutations object at 0x7f9b1c0b6f10> - iterator
+print(list(perm)) # [(1, 2, 3), (1, 3, 2), (2, 1, 3), (2, 3, 1), (3, 1, 2), (3, 2, 1)] - list of tuples
+
+perm = permutations(a, 2) # 2 - length of each tuple
+print(list(perm)) # [(1, 2), (1, 3), (2, 1), (2, 3), (3, 1), (3, 2)] - list of tuples
 
 
 
