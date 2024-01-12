@@ -1,3 +1,5 @@
+from functools import reduce
+
 # lambda arguments: expression -
 # lambda function - anonymous function, function without a name, one-line function
 
@@ -55,8 +57,35 @@ print(points2D) # [(1, 2), (15, 1), (5, -1), (10, 4)]
 print(points2D_sorted) # [(1, 2), (5, -1), (10, 4), (15, 1)] - sorted according to the sum of each tuple
 
 # Let's talk about map function:
+# So the map function transforms each element with a function so it looks like this:
+# map(func, seq) - func is a function, seq is a sequence (for example, list)
+# so it applies a function to each element in the sequence
+a = [1, 2, 3, 4, 5]
+b = map(lambda x: x * 2, a) # multiply each element by 2
+print(b) # <map object at 0x7f9b1c0b6f10> - map object
+print(list(b)) # [2, 4, 6, 8, 10] - list of mapped elements
 
+# u can achieve the same result using list comprehension:
+c = [x * 2 for x in a] # list comprehension a bit easier to read than map function
+print(c) # [2, 4, 6, 8, 10] - list of mapped elements
 
+# Let's talk about filter function:
+# So the filter function filters elements in a sequence
+# filter(func, seq) - also func is a function, seq is a sequence (for example, list)
+# and this function returns only those elements for which the function returns True
+a = [1, 2, 3, 4, 5, 6]
+b = filter(lambda x: x % 2 == 0, a) # filter only even numbers
 
+print(list(b)) # [2, 4, 6] - list of filtered elements
 
+c = [x for x in a if x % 2 == 0] # list comprehension a bit easier to read than filter function
+print(c) # [2, 4, 6] - list of filtered elements
 
+# Let's talk about reduce function:
+# So the reduce function applies a rolling computation to sequential pairs of values in a list
+# reduce(func, seq) - also takes func is a function, seq is a sequence (for example, list)
+# it repeatedly applies the function to the elements and returns a single value
+a = [1, 2, 3, 4]
+
+product_a = reduce(lambda x, y: x * y, a) # multiply all elements
+print(product_a) # 24 - product of all elements in the list
