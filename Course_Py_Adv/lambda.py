@@ -22,7 +22,7 @@ print(mult(2, 7)) # 14
 # or it is used as an argument to higher-order functions (functions that take other functions as arguments)
 # for example, they are used along with built-in functions like filter, map, reduce
 
-# Sorted method with lambda as key argument:
+# Sorting method with lambda as key argument:
 
 # 1st use case - sorting a list of tuples:
 
