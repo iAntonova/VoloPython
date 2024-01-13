@@ -89,3 +89,17 @@ a = [1, 2, 3, 4]
 
 product_a = reduce(lambda x, y: x * y, a) # multiply all elements
 print(product_a) # 24 - product of all elements in the list
+
+def multiplier(n):
+    # Внутренняя функция, лямбда, запоминает значение n из внешней функции
+    return lambda x: x * n
+
+# Создаем функцию для удвоения числа
+doubler = multiplier(2)
+
+# Создаем функцию для утроения числа
+tripler = multiplier(3)
+
+# Теперь можем использовать эти функции
+print(doubler(5))  # Результат будет 10
+print(tripler(5))  # Результат будет 15
