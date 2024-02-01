@@ -93,20 +93,41 @@ def encode_user(o):
         return {'name': o.name, 'age': o.age, o.__class__.__name__: True}
     else:
         raise TypeError('Object of type User is not JSON serializable')
-
+    
+userJSON = json.dumps(user, default=encode_user)
+print(userJSON) # {"name": "Max", "age": 27, "User": true}
+# --------------------------
+#and there is a second way to do it:
 from json import JSONEncoder
+
 class UserEncoder(JSONEncoder): # and then we overwrite the default method
     def default(self, o):
         if isinstance(o, User):
             return {'name': o.name, 'age': o.age, o.__class__.__name__: True}
         return JSONEncoder.default(self, o)
 #     # and now in our dump or dumps method we can use cls parameter
-# userJSON = json.dumps(user, cls=UserEncoder)
-# print(userJSON) # {"name": "Max", "age": 27, "User": true}
+userJSON = json.dumps(user, cls=UserEncoder)
+print(userJSON) # {"name": "Max", "age": 27, "User": true}
 
 # and as a last option we can use encoder directly
 userJSON = UserEncoder().encode(user)
 print(userJSON) # {"name": "Max", "age": 27, "User": true}
+# So this is how we can encode custom objects to json
 
 # now let's say we want to decode our object back
+# let's say we have a json string
+user = json.loads(userJSON)
+print(user) # {'name': 'Max', 'age': 27, 'User': True}  - so we have a dictionary
+print(type(user)) # <class 'dict'>
+# so for example we can not call:  
+# print(user.name) # AttributeError: 'dict' object has no attribute 'name'
+# but what I have to do if I want to decode it back to a custom object
+# I also have to create a custom decoding function
+def decode_user(dct):
+    if User.__name__ in dct:
+        return User(name=dct['name'], age=dct['age'])
+    return dct
 
+user = json.loads(userJSON, object_hook=decode_user)
+print(type(user)) # <class '__main__.User'>
+print(user.name) # Max
