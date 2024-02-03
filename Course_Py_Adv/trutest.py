@@ -1,3 +1,5 @@
+# https://www.youtube.com/watch?v=tG8PPne7ef0&t=161s
+# Using GitHub Copilot with Python: A Step-by-Step Guide
 # create  a list of 100 numbers and find the max number
 
 my_list = [i for i in range(100)]
@@ -19,3 +21,14 @@ print(even_numbers)  # [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 3
 
 odd_numbers = 1
 print(odd_numbers)  # [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49,
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+# create a list of 10 persons:
+PERSON = [Person(name='John', age=25), Person(name='Jane', age=23), Person(name='Doe', age=22),
+          Person(name='Smith', age=29), Person(name='Doe', age=30), Person(name='Smith', age=29),
+          Person(name='Doe', age=22), Person(name='Smith', age=29), Person(name='Doe', age=22),
+          Person(name='Smith', age=29)]
